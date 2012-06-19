@@ -10,8 +10,8 @@ Copyright (C) 2012 FuseSource, Inc. -- http://fusesource.com
 
   Stomp = {
     frame: function(command, headers, body) {
-      if (headers == null) headers = [];
-      if (body == null) body = '';
+      if (headers === null) headers = [];
+      if (body === null) body = '';
       return {
         command: command,
         headers: headers,
@@ -146,15 +146,15 @@ Copyright (C) 2012 FuseSource, Inc. -- http://fusesource.com
     };
 
     Client.prototype.send = function(destination, headers, body) {
-      if (headers == null) headers = {};
-      if (body == null) body = '';
+      if (headers === null) headers = {};
+      if (body === null) body = '';
       headers.destination = destination;
       return this._transmit("SEND", headers, body);
     };
 
     Client.prototype.subscribe = function(destination, callback, headers) {
       var id;
-      if (headers == null) headers = {};
+      if (headers === null) headers = {};
       id = "sub-" + this.counter++;
       headers.destination = destination;
       headers.id = id;
@@ -164,32 +164,32 @@ Copyright (C) 2012 FuseSource, Inc. -- http://fusesource.com
     };
 
     Client.prototype.unsubscribe = function(id, headers) {
-      if (headers == null) headers = {};
+      if (headers === null) headers = {};
       headers.id = id;
       delete this.subscriptions[id];
       return this._transmit("UNSUBSCRIBE", headers);
     };
 
     Client.prototype.begin = function(transaction, headers) {
-      if (headers == null) headers = {};
+      if (headers === null) headers = {};
       headers.transaction = transaction;
       return this._transmit("BEGIN", headers);
     };
 
     Client.prototype.commit = function(transaction, headers) {
-      if (headers == null) headers = {};
+      if (headers === null) headers = {};
       headers.transaction = transaction;
       return this._transmit("COMMIT", headers);
     };
 
     Client.prototype.abort = function(transaction, headers) {
-      if (headers == null) headers = {};
+      if (headers === null) headers = {};
       headers.transaction = transaction;
       return this._transmit("ABORT", headers);
     };
 
     Client.prototype.ack = function(message_id, headers) {
-      if (headers == null) headers = {};
+      if (headers === null) headers = {};
       headers["message-id"] = message_id;
       return this._transmit("ACK", headers);
     };
