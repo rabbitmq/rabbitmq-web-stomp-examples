@@ -1,5 +1,12 @@
 # RabbitMQ Web STOMP Examples
 
+## This was migrated to https://github.com/rabbitmq/rabbitmq-server
+
+This repository has been moved to the main unified RabbitMQ "monorepo", including all open issues. You can find the source under [/deps/rabbitmq_web_stomp_examples](https://github.com/rabbitmq/rabbitmq-server/tree/master/deps/rabbitmq_web_stomp_examples).
+All issues have been transferred.
+
+## Introduction
+
 This project contains few basic examples of [RabbitMQ Web STOMP plugin](https://github.com/rabbitmq/rabbitmq-web-stomp)
 usage.
 
